@@ -125,13 +125,15 @@ export default function PortfolioPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-gray-900 text-gray-100">
+
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-blue-50 to-white py-16 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-800">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 text-balance">Case Studies & Results</h1>
-            <p className="text-xl text-gray-600 max-w-2xl">
-              Real results from real clients. See how {"we've"} helped businesses scale with proven strategies.
+            <h1 className="text-5xl sm:text-6xl font-bold text-teal-400 mb-6 text-balance">Case Studies & Results</h1>
+            <p className="text-xl text-gray-300 max-w-2xl">
+              Real results from real clients. See how {"we've"} helped businesses scale with proven strategies that
+              actually move the needle.
             </p>
           </div>
         </section>
@@ -141,36 +143,39 @@ export default function PortfolioPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {caseStudies.map((study) => (
-                <div key={study.id} className="glass p-8 hover:shadow-xl transition-all duration-300">
+                <div
+                  key={study.id}
+                  className="bg-gray-800 border border-gray-700 p-8 rounded-2xl hover:shadow-xl transition-all duration-300"
+                >
                   {/* Header */}
                   <div className="mb-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">{study.client}</h3>
-                        <p className="text-sm text-gray-600 mt-1">{study.service}</p>
+                        <h3 className="text-2xl font-bold text-teal-400">{study.client}</h3>
+                        <p className="text-sm text-gray-400 mt-1">{study.service}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-3xl font-bold text-blue-600">{study.metric}</p>
+                        <p className="text-3xl font-bold text-teal-300">{study.metric}</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">{study.description}</p>
+                    <p className="text-gray-300">{study.description}</p>
                   </div>
 
                   {/* Before/After */}
-                  <div className="grid grid-cols-2 gap-4 mb-8 pb-8 border-b border-gray-200">
+                  <div className="grid grid-cols-2 gap-4 mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <p className="text-xs font-semibold text-gray-500 uppercase mb-3">Before</p>
                       {Object.entries(study.beforeAfter.before).map(([key, val]) => (
-                        <p key={key} className="text-gray-700 mb-2">
+                        <p key={key} className="text-gray-400 mb-2">
                           <span className="font-semibold">{key}:</span> {val}
                         </p>
                       ))}
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-blue-600 uppercase mb-3">After</p>
+                      <p className="text-xs font-semibold text-teal-400 uppercase mb-3">After</p>
                       {Object.entries(study.beforeAfter.after).map(([key, val]) => (
-                        <p key={key} className="text-gray-900 font-semibold mb-2">
-                          <span>{key}:</span> {val}
+                        <p key={key} className="text-white font-semibold mb-2">
+                          <span className="capitalize">{key}:</span> {val}
                         </p>
                       ))}
                     </div>
@@ -178,18 +183,18 @@ export default function PortfolioPage() {
 
                   {/* Quote */}
                   <div className="mb-6">
-                    <p className="text-gray-700 italic mb-3">{study.quote}</p>
+                    <p className="text-gray-300 italic mb-3">“{study.quote}”</p>
                     <div>
-                      <p className="font-semibold text-gray-900">{study.author}</p>
-                      <p className="text-sm text-gray-600">{study.role}</p>
+                      <p className="font-semibold text-white">{study.author}</p>
+                      <p className="text-sm text-gray-400">{study.role}</p>
                     </div>
                   </div>
 
                   {/* Download CTA */}
-                  <button className="w-full flex items-center justify-center gap-2 px-4 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                  {/* <button className="w-full flex items-center justify-center gap-2 px-4 py-3 border-2 border-teal-400 text-teal-400 font-semibold rounded-lg hover:bg-teal-400 hover:text-gray-900 transition-colors duration-200">
                     <Download size={18} />
                     Download Full Case Study
-                  </button>
+                  </button> */}
                 </div>
               ))}
             </div>
@@ -197,30 +202,30 @@ export default function PortfolioPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-              <p className="text-gray-600 text-lg">Hear from businesses {"we've"} helped scale</p>
+              <h2 className="text-4xl sm:text-5xl font-bold text-teal-400 mb-4">What Our Clients Say</h2>
+              <p className="text-gray-300 text-lg">Hear from businesses {"we've"} helped scale</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, idx) => (
-                <div key={idx} className="glass p-8">
+                <div key={idx} className="bg-gray-800 border border-gray-700 p-8 rounded-2xl">
                   {/* Stars */}
                   <div className="flex gap-1 mb-4">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
+                      <Star key={i} size={18} className="fill-teal-400 text-teal-400" />
                     ))}
                   </div>
 
                   {/* Text */}
-                  <p className="text-gray-700 mb-6 italic">{testimonial.text}</p>
+                  <p className="text-gray-300 mb-6 italic">{testimonial.text}</p>
 
                   {/* Author */}
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="font-semibold text-white">{testimonial.author}</p>
+                    <p className="text-sm text-gray-400">
                       {testimonial.role} at {testimonial.company}
                     </p>
                   </div>
@@ -231,7 +236,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Social Proof Stats */}
-        <section className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gray-950 text-gray-100 py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
@@ -241,7 +246,7 @@ export default function PortfolioPage() {
                 { number: "8+", label: "Years Experience" },
               ].map((stat, idx) => (
                 <div key={idx}>
-                  <div className="text-4xl font-bold text-blue-400 mb-2">{stat.number}</div>
+                  <div className="text-4xl font-bold text-teal-400 mb-2">{stat.number}</div>
                   <p className="text-gray-400">{stat.label}</p>
                 </div>
               ))}
@@ -250,15 +255,15 @@ export default function PortfolioPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-r from-teal-600 to-teal-500 text-white py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">Ready to Become a Success Story?</h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-teal-100 mb-8">
               Your business could be next. {"Let's"} discuss your growth potential.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-teal-600 font-bold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               Schedule Free Strategy Call
               <ArrowRight size={18} />
@@ -266,7 +271,7 @@ export default function PortfolioPage() {
           </div>
         </section>
       </main>
-      <footer />
+      <Footer />
     </>
   )
 }

@@ -87,17 +87,16 @@ export default function Home() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-12">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-50 mb-4 text-balance">
-                Grow Your Business with
+                Get 2–5X More Clients With
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">
                   {" "}
-                  Proven Digital Marketing
+                  AI-Powered Digital Marketing
                 </span>
               </h1>
               <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-purple-500 m-auto mb-6"></div>
               <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto text-balance leading-relaxed">
-                We help entrepreneurs increase leads, visibility, and revenue
-                through data-driven marketing systems. Stop wasting money on
-                ineffective strategies.
+                We help businesses increase revenue using proven marketing
+                systems — no guesswork, only measurable results.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -219,16 +218,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="">
-            <Accordion
-              type="single"
-              collapsible
-              className="w-full"
-              defaultValue="item-1"
-            >
+          <div>
+            <Accordion type="single" collapsible>
               {digitalMarketingFaq.map((item, index) => (
-                <AccordionItem key={index} value={`item-${index + 1}`}>
-                  <AccordionTrigger className="text-gray-100 text-lg max-w-2xl mx-auto  pb-3">
+                <AccordionItem
+                  key={index}
+                  value={`item-${index + 1}`}
+                  className="border-b-0"
+                >
+                  <AccordionTrigger className="text-gray-100 text-lg max-w-2xl mx-auto pb-3 no-underline hover:underline ">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-100 text-lg max-w-2xl mx-auto">
